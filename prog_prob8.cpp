@@ -1,14 +1,20 @@
 #include"header.h"
 
 
-void add(int x1[], int x2[], int x3[] = 0 , int x4[] = 0 )
+int* add(int n, int x1[], int x2[], int x3[], int x4[] )
 {
+	int vect[50];
+
 	int i;
 	for (i = 0;i < n;i++)
+	{
 		vect[i] = x1[i] + x2[i] + x3[i] + x4[i];
+	}
+
+	return vect;
 }
 
-void afisare(int *v)
+void afisare(int n, int *v)
 {
 	int i;
 	cout << endl<<endl;
@@ -16,7 +22,7 @@ void afisare(int *v)
 		cout << *(v + i) << " ";
 }
 
-void generare(int *v)
+void generare(int n, int *v)
 {
 	int i;
 	for (i = 0;i < n;i++) {
@@ -26,13 +32,13 @@ void generare(int *v)
 	}
 }
 
-void generare_n()
+int generare_n()
 {
 	srand(time(NULL));
-	n = rand() % 50;
+	return rand() % 50;
 }
 
-void reset_vector(int *v)
+void reset_vector(int n, int *v)
 {
 	int i;
 	for (i = 0;i < n;i++)
